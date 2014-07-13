@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<!--<script>-->
+    <!--document.onkeydown = function(){-->
+        <!--document.getElementById("test").innerHTML = "测试成功";-->
+
+        <!--if(event.ctrlKey == true){-->
+            <!--if(event.keyCode == 83){-->
+                <!--document.getElementById("test").innerHTML = "ctrl+s成功";-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+<script>
+    document.addEventListener("keydown", function(e) {
+        //可以判断是不是mac，如果是mac,ctrl变为花键
+        //event.preventDefault() 方法阻止元素发生默认的行为。
+        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+            e.preventDefault();
+            // Process event...
+            document.getElementById("test").innerHTML = "ctrl+s成功";
+        }
+    }, false);
+</script>
+
+<body>
+<h1>修改默认的快捷键，例如ctrl+s不是保存网页到本地</h1>
+
+    <p id="test">测试</p>
+</body>
+</html>
