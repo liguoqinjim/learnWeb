@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap In Practice - Landing Page Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet"/>
+
+    <style>
+
+        /* http://css-tricks.com/perfect-full-page-background-image/ */
+        html {
+            background: url(/learnWeb/Headroom.js/img/bg.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            padding-top: 160px;
+            font-size: 16px;
+            font-family: "Open Sans", serif;
+            background: transparent;
+        }
+
+        h1 {
+            font-family: "Abel", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+        /* Override B3 .panel adding a subtly transparent background */
+        .panel {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .margin-base-vertical {
+            margin: 40px 0;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后会无期</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-6 col-md-offset-3 panel panel-default" style="min-height: 1688px">
+
+            <h1 class="margin-base-vertical">Have you ever seen the rain?</h1>
+
+            <p>
+                Someone told me long ago there's a calm before the storm. I know, It's been comin for some time.
+            </p>
+
+            <p>
+                When it's over, so they say, it'll rain a sunny day. I know, Shinin down like water.
+            </p>
+
+            <p>
+                I want to know, have you ever seen the rain?
+            </p>
+
+            <form class="margin-base-vertical">
+                <p class="input-group">
+                    <span class="input-group-addon"><span class="icon-envelope"></span></span>
+                    <input type="text" class="form-control input-lg" name="email" placeholder="jonsnow@knowsnothi.ng"/>
+                </p>
+
+                <p class="help-block text-center">
+                    <small>We won't send you spam. Unsubscribe at any time.</small>
+                </p>
+                <p class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg">Keep me posted</button>
+                </p>
+                </span>
+            </form>
+
+            <div class="margin-base-vertical">
+                <small class="text-muted"><a href="http://www.flickr.com/photos/erwlas/6133364748/">Background picture
+                    by erwlas @flickr</a>. Used under <a href="http://creativecommons.org/licenses/by/2.0/deed.en">Creative
+                    Commons - Attribution</a>.
+                </small>
+            </div>
+
+        </div>
+        <!-- //main content -->
+    </div>
+    <!-- //row -->
+</div>
+<!-- //container -->
+
+
+<!--headroom.js-->
+<script src="/learnWeb/Headroom.js/js/headroom.js"></script>
+<script>
+    (function() {
+        var header = document.querySelector("#header");
+        if(window.location.hash) {
+            header.classList.add("slide--up");
+        }
+
+        new Headroom(header, {
+            tolerance: {
+                down : 10,
+                up : 20
+            },
+            offset : 205,
+            classes: {
+                initial: "slide",
+                pinned: "slide--reset",
+                unpinned: "slide--up"
+            }
+        }).init();
+
+    }());
+</script>
+
+
+</body>
+</html>
