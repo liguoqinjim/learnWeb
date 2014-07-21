@@ -1,0 +1,29 @@
+在使用headroom.js的时候需要注意:
+
+1.不管使用什么前端框架，都要在head中加入
+<style>
+.headroom {
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+</style>
+
+2.在末尾加入
+<script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
+
+<script>
+    // grab an element
+    var myElement = document.querySelector("header");
+    // construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+    // initialise
+    headroom.init();
+</script>
+
+3.bootcss中的headroom.js主页不完整，参考官网:
+http://wicky.nillia.ms/headroom.js/
