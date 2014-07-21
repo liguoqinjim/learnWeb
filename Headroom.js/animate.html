@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .headroom {
+            transition: transform 200ms linear;
+        }
+        .headroom--pinned {
+            transform: translateY(0%);
+        }
+        .headroom--unpinned {
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <p>Hello World</p>
+    </header>
+
+    <div style="background-color: grey;min-height: 2200px;padding: 20px;width: 600px">
+
+    </div>
+
+
+
+    <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
+
+    <script>
+        // grab an element
+        var myElement = document.querySelector("header");
+        // construct an instance of Headroom, passing the element
+        var headroom  = new Headroom(myElement);
+        // initialise
+        headroom.init();
+    </script>
+</body>
+</html>

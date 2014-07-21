@@ -4,6 +4,9 @@
     <title>Bootstrap In Practice - Landing Page Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--<link rel="stylesheet" href="Headroom.js_files/main.css">-->
+
     <!-- Bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
@@ -22,7 +25,7 @@
         }
 
         body {
-            padding-top: 160px;
+            padding-top: 100px;
             font-size: 16px;
             font-family: "Open Sans", serif;
             background: transparent;
@@ -43,33 +46,46 @@
             margin: 40px 0;
         }
 
+
     </style>
+    <style>
+        .headroom {
+            transition: transform 200ms linear;
+        }
+        .headroom--pinned {
+            transform: translateY(0%);
+        }
+        .headroom--unpinned {
+            transform: translateY(-100%);
+        }
+    </style>
+
 
 
 
 
 </head>
 <body>
-<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">后会无期</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
+<header id="header" class="navbar navbar-inverse navbar-fixed-top">
+    <!--<div class="container">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand" href="#">后会无期</a>-->
+        <!--</div>-->
+        <!--<div class="navbar-collapse collapse">-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <!--<li><a href="#about">About</a></li>-->
+                <!--<li><a href="#contact">Contact</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<!--/.nav-collapse -->-->
+    <!--</div>-->
 </header>
 
 <div class="container">
@@ -122,29 +138,15 @@
 <!-- //container -->
 
 
-<!--headroom.js-->
-<script src="/learnWeb/Headroom.js/js/headroom.js"></script>
+<script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
+
 <script>
-    (function() {
-        var header = document.querySelector("#header");
-        if(window.location.hash) {
-            header.classList.add("slide--up");
-        }
-
-        new Headroom(header, {
-            tolerance: {
-                down : 10,
-                up : 20
-            },
-            offset : 205,
-            classes: {
-                initial: "slide",
-                pinned: "slide--reset",
-                unpinned: "slide--up"
-            }
-        }).init();
-
-    }());
+    // grab an element
+    var myElement = document.querySelector("header");
+    // construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+    // initialise
+    headroom.init();
 </script>
 
 
